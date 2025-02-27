@@ -86,7 +86,8 @@ def apply_same_schema():
     table_a['author'] = table_a['author'].replace('3dtotal 3dtotal Publishing', '3DTotal Publishing')
     table_a['author'] = table_a['author'].replace('3dtotal Publishing', '3DTotal Publishing')
     table_a['author'] = table_a['author'].replace('3DTotal.com', '3DTotal Publishing')
-
+    table_a.to_csv('table_a_cleaned.csv', index=False, quoting=csv.QUOTE_MINIMAL, sep=",", na_rep='')
+    table_b.to_csv('table_b_cleaned.csv', index=False, quoting=csv.QUOTE_MINIMAL, sep=",", na_rep='')
 
 
 
