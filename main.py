@@ -2,6 +2,7 @@ import utils_gutenberg as gb
 import utils_openlibrary as ol
 
 if __name__ == "__main__":
+    # Assignment 1
     # extract data from gutenberg trending
     gb.get_html_pages("relevance", 50)
     gb.get_book_html("gutenberg_html_pages_relevance", "gutenberg_html_books_relevance")
@@ -20,4 +21,6 @@ if __name__ == "__main__":
     ol.get_book_html("openlibrary_html_pages_fantasy", "openlibrary_html_books_fantasy")
     ol.process_books("openlibrary_html_books_fantasy", "openlibrary_books_fantasy.csv")
     ol.combine_csv() # combine the two csv files
+    # Assignment 2
+
 
