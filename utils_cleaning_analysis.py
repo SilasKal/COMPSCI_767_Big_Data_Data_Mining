@@ -31,6 +31,9 @@ def apply_same_schema():
     gutenberg_schema = ['ID', 'title', 'author', 'publisher', 'first_published_year', 'language', 'cover_image']
     openlibrary_schema = ['ID', 'title', 'subtitle', 'author', 'publisher', 'first_published_year', 'language',
                           'cover_image', 'pages', 'rating', 'isbn_10', 'isbn_13']
+    # table_a['title'] = table_a.apply(
+    #     lambda row: row['title'] if len(row['title']) >= 20 else f"{row['title']} {row['subtitle']}"
+    #     if pd.notna(row['subtitle']) else row['title'], axis=1)
     columns_to_drop = set(openlibrary_schema) - set(gutenberg_schema)
     # drop columns that are not in the schema
     table_a = table_a.drop(columns=[col for col in columns_to_drop])
@@ -88,7 +91,6 @@ def apply_same_schema():
     table_a['author'] = table_a['author'].replace('3DTotal.com', '3DTotal Publishing')
     table_a.to_csv('table_a_cleaned.csv', index=False, quoting=csv.QUOTE_MINIMAL, sep=",", na_rep='')
     table_b.to_csv('table_b_cleaned.csv', index=False, quoting=csv.QUOTE_MINIMAL, sep=",", na_rep='')
-
 
 
 apply_same_schema()
