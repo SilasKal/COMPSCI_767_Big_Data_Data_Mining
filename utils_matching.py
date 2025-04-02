@@ -150,7 +150,7 @@ def perform_matching():
                                          'ltable_publisher', 'rtable_publisher', 'distance_title', 'distance_author',
                                          'difference_year', 'language_match', 'cover_mse', 'score']]
     filtered_table_c.sort_values('score', ascending=True, inplace=True)
-    filtered_table_c.to_csv('table_c.csv', index=False, quoting=csv.QUOTE_MINIMAL, sep=",", na_rep='')
+    filtered_table_c.to_csv('tableC.csv', index=False, quoting=csv.QUOTE_MINIMAL, sep=",", na_rep='')
 
 import Levenshtein as lev
 
